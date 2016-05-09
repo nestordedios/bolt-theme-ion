@@ -1,4 +1,4 @@
-## Solid State by HTML5UP
+## Ion by TEMPLATED
 
 ![Preview](screenshots/screenshot7.png)
 
