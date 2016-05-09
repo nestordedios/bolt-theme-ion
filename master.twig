@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<!--
+    Ion by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+    <head>
+        <title>Ion by TEMPLATED</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script>
+            var paths = {
+                theme : '{{ paths.theme }}'
+            };
+        </script>
+        <script src="{{ paths.theme }}js/jquery.min.js"></script>
+        <script src="{{ paths.theme }}js/skel.min.js"></script>
+        <script src="{{ paths.theme }}js/skel-layers.min.js"></script>
+        <script src="{{ paths.theme }}js/init.js"></script>
+
+        <noscript>
+            <link rel="stylesheet" href="{{ paths.theme }}css/skel.css" />
+            <link rel="stylesheet" href="{{ paths.theme }}css/style.css" />
+            <link rel="stylesheet" href="{{ paths.theme }}css/style-xlarge.css" />
+        </noscript>
+    </head>
+    <body id="top">
+
+    {% block header %}
+
+            <!-- Header -->
+                <header id="header" class="skel-layers-fixed">
+                    <h1><a href="{{ paths.root }}">Ion</a></h1>
+                    <nav id="nav">
+                        <ul>
+                            {{ menu('main', '_menu.twig') }}
+                        </ul>
+                    </nav>
+                </header>
+
+        {% endblock header %}
+
+        {% block content %}
+
+            Content goes here
+
+        {% endblock content %}
+
+            <!-- Footer -->
+
+                {% include '_footer.twig' %}
+
+    </body>
+</html>

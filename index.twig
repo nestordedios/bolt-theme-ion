@@ -1,0 +1,121 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+<!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <h2>This is Ion</h2>
+            <p>A free responsive template by <a href="http://templated.co">TEMPLATED</a></p>
+            <ul class="actions">
+                <li><a href="#content" class="button big special">Sign Up</a></li>
+                <li><a href="#elements" class="button big alt">Learn More</a></li>
+            </ul>
+        </div>
+    </section>
+
+<!-- One -->
+    <section id="one" class="wrapper style1">
+        <header class="major">
+            <h2>Ipsum feugiat consequat</h2>
+            <p>Tempus adipiscing commodo ut aliquam blandit</p>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="4u">
+                    <section class="special box">
+                        <i class="icon fa-area-chart major"></i>
+                        <h3>Justo placerat</h3>
+                        <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+                    </section>
+                </div>
+                <div class="4u">
+                    <section class="special box">
+                        <i class="icon fa-refresh major"></i>
+                        <h3>Blandit quis curae</h3>
+                        <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+                    </section>
+                </div>
+                <div class="4u">
+                    <section class="special box">
+                        <i class="icon fa-cog major"></i>
+                        <h3>Amet sed accumsan</h3>
+                        <p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Two -->
+    <section id="two" class="wrapper style2">
+        <header class="major">
+            <h2>Commodo accumsan aliquam</h2>
+            <p>Amet nisi nunc lorem accumsan</p>
+        </header>
+        <div class="container">
+            <div class="row">
+                {% setcontent entries = 'entries/latest/2' %}
+                {% for entry in entries %}
+                    <div class="6u">
+                        <section class="special">
+                            {% if entry.image is not empty %}
+                                <a href="#" class="image fit"><img src={{ entry.image|image }} alt="" /></a>
+                            {% endif %}
+                            <h3>{{ entry.title }}</h3>
+                            <p>{{ entry.teaser|excerpt(220) }}</p>
+                            <ul class="actions">
+                                <li><a href="{{ entry.link }}" class="button alt">Learn More</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+<!-- Three -->
+    <section id="three" class="wrapper style1">
+        <div class="container">
+            <div class="row">
+                <div class="8u">
+                    {% setcontent lastPage = 'pages/latest/1' %}
+                    <section>
+                        {% for page in lastPage %}
+                            <h2>{{ page.title }}</h2>
+                            {% if page.image is not empty %}
+                                <a href="#" class="image fit"><img src={{ page.image|image }} alt="" /></a>
+                            {% endif %}
+                            <p>{{ page.teaser }}</p>
+                            <ul class="actions">
+                                <li><a href="{{ page.link }}" class="button alt">Learn More</a></li>
+                            </ul>
+                        {% endfor %}
+                    </section>
+                </div>
+                <div class="4u">
+                    <section>
+                        {% setcontent lastNews = 'news/latest/1' %}
+                        {% for oneNews in lastNews %}
+                            <h3>{{ oneNews.title }}</h3>
+                            <p>{{ oneNews.text|excerpt(220) }}</p>
+                            <ul class="actions">
+                                <li><a href="{{ oneNews.link }}" class="button alt">Learn More</a></li>
+                            </ul>
+                        {% endfor %}
+                    </section>
+                    <hr />
+                    <section>
+                        {% setcontent news = 'news/latest/5' where { status: 'published' } orderby 'datepublish' limit 4 %}
+                        <h3>Ante sed commodo</h3>
+                        <ul class="alt">
+                            {% for item in news %}
+                                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

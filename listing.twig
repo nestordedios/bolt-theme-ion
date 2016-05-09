@@ -1,0 +1,34 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+
+<section id="two" class="wrapper style2">
+    <header class="major">
+        <h2>Commodo accumsan aliquam</h2>
+        <p>Amet nisi nunc lorem accumsan</p>
+    </header>
+    <div class="container pages-conntainer">
+
+            {% setcontent pages = 'pages/latest/6' allowpaging %}
+            {% for page in pages %}
+                <div class="">
+                    <section class="special">
+                        {% if page.image is not empty %}
+                            <a href="#" class="image fit"><img src={{ page.image|thumbnail(600, 250, 'c') }} alt="" /></a>
+                        {% endif %}
+                        <h3>{{ page.title }}</h3>
+                        <p>{{ page.teaser|excerpt(220) }}</p>
+                        <ul class="actions">
+                            <li><a href="{{ page.link }}" class="button alt">Learn More</a></li>
+                        </ul>
+                    </section>
+                </div>
+            {% endfor %}
+
+    <div class="pager">{{ pager('', 3, '_pagination.twig' ) }}</div>
+
+    </div>
+
+</section>
+
+{% endblock content %}

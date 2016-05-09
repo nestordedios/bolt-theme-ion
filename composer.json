@@ -1,0 +1,31 @@
+{
+    "name": "nestordedios/bolt-theme-ion",
+    "description": "Ion - A crisp, modern responsive template built with a business-y slant.",
+    "type": "bolt-theme",
+    "keywords": ["theme", "ion", "responsive", "awesome", "template", "business", "modern"],
+    "require": {
+        "bolt/bolt": ">=2.0.0,<3.0.0"
+    },
+    "license": "CCA (Creative Commons Attribution)",
+    "authors": [
+        {
+            "name": "Nestor de Dios Fernandez",
+            "email": "nestordedios@outlook.es"
+        },
+        {
+            "name": "TEMPLATED",
+            "homepage": "www.templated.co"
+        }
+    ],
+    "extra": {
+        "bolt-screenshots": [
+            "screenshots/screenshot1.png",
+            "screenshots/screenshot2.png",
+            "screenshots/screenshot3.png",
+            "screenshots/screenshot4.png",
+            "screenshots/screenshot5.png",
+            "screenshots/screenshot6.png",
+            "screenshots/screenshot7.png"
+        ]
+    }
+}
